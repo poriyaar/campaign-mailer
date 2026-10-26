@@ -1,8 +1,11 @@
 FROM dunglas/frankenphp:1-php8.4-bookworm
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends git unzip \
+    && apt-get install -y --no-install-recommends git unzip curl \
     && rm -rf /var/lib/apt/lists/*
+
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs
 
 RUN install-php-extensions \
     pdo_pgsql \

@@ -24,11 +24,11 @@ class UsersTable
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->jalaliDate()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->jalaliDate()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
